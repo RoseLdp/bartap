@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  html {
+    background: linear-gradient(#9ed128 0%, #358b98 80%);
+    opacity: 0.8;
+    height: 100%;
+  }
+
+  .container {
+    margin-top: 200px;
+    perspective: 1000px;
+  }
+
+  .cube {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    margin: auto;
+    transform-style: preserve-3d;
+    /*定义3d转换*/
+    animation: rotate 30s infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transfrom: rotateY(0deg) rotateX(0deg);
+    }
+
+    to {
+      transform: rotateY(360deg) rotateX(360deg);
+    }
+  }
+
+  /*4.定义每一个面的宽高、行高等内容*/
+  .cube>div {
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    position: absolute;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    line-height: 200px;
+    font-size: 30px;
+    border: 1px solid #fff;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .plane-front {
+    transform: translateZ(100px);
+  }
+
+  .plane-back {
+    transform: translateZ(-100px);
+  }
+
+  .plane-left {
+    transform: rotateY(90deg) translateZ(-100px);
+  }
+
+  .plane-right {
+    transform: rotateY(90deg) translateZ(100px);
+  }
+
+  .plane-top {
+    transform: rotateX(90deg) translateZ(100px);
+  }
+
+  .plane-bottom {
+    transform: rotateX(90deg) translateZ(-100px);
+  }
+
+  .cube:hover .plane-front {
+    transform: translateZ(200px);
+  }
+
+  .cube:hover .plane-back {
+    transform: translateZ(-200px);
+  }
+
+  .cube:hover .plane-left {
+    transform: rotateY(90deg) translateZ(-200px);
+  }
+
+  .cube:hover .plane-right {
+    transform: rotateY(90deg) translateZ(200px);
+  }
+
+  .cube:hover .plane-top {
+    transform: rotateX(90deg) translateZ(200px);
+  }
+
+  .cube:hover .plane-bottom {
+    transform: rotateX(90deg) translateZ(-200px);
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="cube">
+      <div class="plane-front">
+        <img src="./image/1.jpg" alt="">
+      </div>
+      <div class="plane-back">
+        <img src="./image/2.jpg" alt="">
+      </div>
+      <div class="plane-left">
+        <img src="./image/3.jpg" alt="">
+      </div>
+      <div class="plane-right">
+        <img src="./image/4.jpg" alt="">
+      </div>
+      <div class="plane-top">
+        <img src="./image/6.jpg" alt="">
+      </div>
+      <div class="plane-bottom">
+        <img src="./image/7.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
